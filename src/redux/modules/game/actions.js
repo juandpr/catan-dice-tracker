@@ -5,14 +5,6 @@ import {
   DICE_UNDO
 } from './const';
 
-import initialState from './initialState';
-
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-  
+export const mockAction = _ => (dispatch) => {
+  return;
 }
-
-export default reducer;

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { mockAction } from '../../redux/modules/game/actions';
-import Game from './Game';
+import History from './History';
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   mockAction,
@@ -11,4 +11,4 @@ const mapStateToProps = state => {
 	return ({});
 };
   
-export default connect(mapStateToProps, mapDispatchToProps)(Game);
+export default connect(mapStateToProps, mapDispatchToProps)(History);

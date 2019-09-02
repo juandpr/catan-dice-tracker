@@ -1,12 +1,12 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import styles from './Game.styles.js';
+import styles from './NewGame.styles.js';
 
 import {
   View
 } from 'react-native';
 
-class Game extends React.Component {
+class NewGame extends React.Component {
   render() {
     return (
       <View style={styles.game}>
@@ -16,7 +16,7 @@ class Game extends React.Component {
   }
 }
 
-Game.propTypes = {
+NewGame.propTypes = {
 };
 
-export default Game;
+export default NewGame;
