@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		005224C798594244833DD5D0 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E02DE9A1036043EBA7118209 /* FontAwesome5_Regular.ttf */; };
 		00E356F31AD99517003FC87E /* catanDiceTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* catanDiceTrackerTests.m */; };
