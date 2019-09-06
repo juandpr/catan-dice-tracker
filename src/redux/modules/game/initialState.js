@@ -1,6 +1,8 @@
 const initialState = {
   games: [],
-  current: null
+  current: {
+    dice: []
+  }
 };
 
 export default initialState;
