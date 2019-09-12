@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { newGame, throwDice } from '../../redux/modules/game/actions';
+import { newGame, throwDice, undoDice } from '../../redux/modules/game/actions';
 import Game from './Game';
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  newGame, throwDice
+  newGame, throwDice, undoDice
 }, dispatch);
 
 const mapStateToProps = state => {

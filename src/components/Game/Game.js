@@ -3,14 +3,13 @@ import { PropTypes } from 'prop-types';
 import styles from './Game.styles.js';
 
 import {
-  View,
-  Button
+  View
 } from 'react-native';
 
 import Chart from './../Chart'
+import DiceThrower from './../DiceThrower'
 
 class Game extends React.Component {
-
   componentWillMount() {
     this.props.newGame();
   }
@@ -19,7 +18,7 @@ class Game extends React.Component {
     return (
       <View style={styles.game}>
         <Chart dice={this.props.dice} />
-        <Button onPress={() => {this.props.throwDice(7)}} title="Throw"></Button>
+        <DiceThrower throwDice={this.props.throwDice} undoDice={this.props.undoDice}/>
       </View>
     );
   }
@@ -28,7 +27,8 @@ class Game extends React.Component {
 Game.propTypes = {
   dice: PropTypes.array.isRequired,
   newGame: PropTypes.func.isRequired,
-  throwDice: PropTypes.func.isRequired
+  throwDice: PropTypes.func.isRequired,
+  undoDice: PropTypes.func.isRequired
 };
 
 export default Game;

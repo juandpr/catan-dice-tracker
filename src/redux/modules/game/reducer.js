@@ -37,6 +37,17 @@ const reducer = (state = initialState, action) => {
     case GAME_SELECT:
       state.current = state.games[action.index];
       return state;
+    
+    case DICE_UNDO:
+      return {
+        ...state,
+        current: {
+          ...state.current,
+          dice: [
+            ...state.current.dice.slice(0, -1)
+          ]
+        }
+      };
 
     default:
       return state;
