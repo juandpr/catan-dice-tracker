@@ -10,15 +10,25 @@ import initialState from './initialState';
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case GAME_NEW:
-      return {
-        ...state,
-        games: [
-          ...state.games,
-          state.current
-        ],
-        current: {
-          dice: [],
-          date: new Date(),
+      if (state.current.dice.length > 0) {
+        return {
+          ...state,
+          games: [
+            ...state.games,
+            state.current
+          ],
+          current: {
+            dice: [],
+            date: new Date(),
+          }
+        }
+      } else {
+        return {
+          ...state,
+          current: {
+            dice: [],
+            date: new Date(),
+          }
         }
       }
 

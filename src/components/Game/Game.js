@@ -10,10 +10,6 @@ import Chart from './../Chart'
 import DiceThrower from './../DiceThrower'
 
 class Game extends React.Component {
-  componentWillMount() {
-    this.props.newGame();
-  }
-
   render() {
     return (
       <View style={styles.game}>
@@ -26,7 +22,6 @@ class Game extends React.Component {
 
 Game.propTypes = {
   dice: PropTypes.array.isRequired,
-  newGame: PropTypes.func.isRequired,
   throwDice: PropTypes.func.isRequired,
   undoDice: PropTypes.func.isRequired
 };

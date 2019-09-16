@@ -74,7 +74,7 @@ class Chart extends React.Component {
   }
 
   render() {
-    const fill = 'rgb(134, 65, 244)';
+    const fill = '#c32227';
     let data = this.getChartData();
 
     return (

@@ -2,15 +2,18 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   diceThrower: {
-    flex: 1
+    flex: 1,
+    marginTop: 10
   },
   column: {
     flex: 1,
     height: 100,
     width: '100%',
-    flexDirection: 'row',
+    flexDirection: 'row'
+  },
+  firstColumn: {
+    borderColor: '#CCC',
     borderStyle: 'solid',
-    borderBottomWidth: 1,
     borderTopWidth: 1
   },
   buttonContainer: {
@@ -21,8 +24,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     borderColor: '#CCC',
     borderStyle: 'solid',
-    borderWidth: 1,
-    borderBottomWidth: 0,
-    borderTopWidth: 0
+    borderBottomWidth: 1,
+    borderRightWidth: 1
   }
 });
