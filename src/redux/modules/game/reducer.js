@@ -2,7 +2,8 @@ import {
   GAME_NEW,
   GAME_SELECT,
   DICE_THROW,
-  DICE_UNDO
+  DICE_UNDO,
+  GAMES_SET
 } from './const';
 
 import initialState from './initialState';
@@ -58,6 +59,16 @@ const reducer = (state = initialState, action) => {
           ]
         }
       };
+
+    case GAMES_SET:
+      return {
+        ...state,
+        games: [
+          ...state.games,
+          ...action.games.games
+        ],
+        current: action.games.current
+      }
 
     default:
       return state;

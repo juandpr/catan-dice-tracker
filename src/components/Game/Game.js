@@ -10,6 +10,12 @@ import Chart from './../Chart'
 import DiceThrower from './../DiceThrower'
 
 class Game extends React.Component {
+  componentDidMount() {
+    if (this.props.dice.length = 0) {
+      this.props.navigation.navigate('NewGame');
+    }
+  }
+
   render() {
     return (
       <View style={styles.game}>
