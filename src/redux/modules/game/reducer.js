@@ -6,7 +6,10 @@ import {
   GAMES_SET
 } from './const';
 
+import { format } from 'date-fns';
+
 import initialState from './initialState';
+import uuid from "uuid";
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -20,7 +23,8 @@ const reducer = (state = initialState, action) => {
           ],
           current: {
             dice: [],
-            date: new Date(),
+            date: getFormattedDate(),
+            id: uuid.v1()
           }
         }
       } else {
@@ -28,7 +32,8 @@ const reducer = (state = initialState, action) => {
           ...state,
           current: {
             dice: [],
-            date: new Date(),
+            date: getFormattedDate(),
+            id: uuid.v1()
           }
         }
       }
@@ -73,6 +78,13 @@ const reducer = (state = initialState, action) => {
     default:
       return state;
   }
-}
+};
+
+const getFormattedDate = () => {
+  let date = new Date();
+  date = format(date, 'dd/MM/yy HH:mm');
+
+  return date;
+};
 
 export default reducer;
