@@ -2,8 +2,6 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   diceButton: {
-    paddingHorizontal: 10,
-    paddingVertical: 3,
     alignItems: 'center',
     justifyContent: 'center',
     height: '100%',

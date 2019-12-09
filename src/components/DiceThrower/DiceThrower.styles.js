@@ -7,24 +7,22 @@ export default StyleSheet.create({
   },
   column: {
     flex: 1,
-    height: 100,
     width: '100%',
     flexDirection: 'row'
   },
   firstColumn: {
     borderColor: '#CCC',
     borderStyle: 'solid',
-    borderTopWidth: 1
+    borderTopWidth: 4,
   },
   buttonContainer: {
     flex: 1,
-    height: 100,
     alignSelf: 'stretch',
     alignItems: 'center',
     justifyContent: 'center',
     borderColor: '#CCC',
     borderStyle: 'solid',
-    borderBottomWidth: 1,
-    borderRightWidth: 1
+    borderBottomWidth: 4,
+    borderRightWidth: 4
   }
 });
