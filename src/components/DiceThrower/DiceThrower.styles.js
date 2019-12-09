@@ -23,6 +23,9 @@ export default StyleSheet.create({
     borderColor: '#CCC',
     borderStyle: 'solid',
     borderBottomWidth: 4,
-    borderRightWidth: 4
+    borderRightWidth: 4,
+  },
+  buttonContainerLastRow: {
+    borderRightWidth: 0,
   }
 });

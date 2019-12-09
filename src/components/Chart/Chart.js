@@ -85,7 +85,7 @@ class Chart extends React.Component {
           svg={{ fill }}
           yAccessor={ ({ item }) => item.amount }
           xAccessor={ ({ item }) => item.diceValue }
-          contentInset={{ top: 50, bottom: 30 }}
+          contentInset={{ top: 50, bottom: 10 }}
         >
           <Grid />
         </BarChart>
