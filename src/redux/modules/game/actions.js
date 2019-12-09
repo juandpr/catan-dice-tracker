@@ -12,10 +12,10 @@ export const newGame = _ => (
   }
 );
 
-export const selectGame = (index) => (
+export const selectGame = (id) => (
   {
     type: GAME_SELECT,
-    index
+    id
   }
 );
 

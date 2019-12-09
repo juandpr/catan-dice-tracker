@@ -3,7 +3,8 @@ import { PropTypes } from 'prop-types';
 import styles from './DiceButton.styles.js';
 
 import {
-  TouchableOpacity, Text
+  TouchableOpacity,
+  Text
 } from 'react-native';
 
 class DiceButton extends React.Component {

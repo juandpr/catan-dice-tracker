@@ -17,7 +17,7 @@ const TabNavigator = createBottomTabNavigator(
     History: History
   },
   {
-    initialRouteName: 'Current',
+    initialRouteName: 'History',
     defaultNavigationOptions: ({ navigation }) => {
       return {
         tabBarIcon: ({ tintColor }) => {

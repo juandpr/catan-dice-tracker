@@ -3,12 +3,29 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   history: {
     backgroundColor: '#EFEFEF',
+    flex: 1,
+    padding: 10
+  },
+  historyTitle: {
+    marginTop: 30,
+    textAlign: 'center',
+    fontSize: 24
+  },
+  listTitle: {
+    flexDirection: 'row',
+    height: 20
+  },
+  listTitleLeft: {
+    textAlign: 'left',
+    flex: 1
+  },
+  listTitleRight: {
+    textAlign: 'right',
     flex: 1
   },
   gamesList: {
     flex: 1,
-    paddingHorizontal: 10,
-    paddingVertical: 20
+    paddingVertical: 10
   },
   gameCard: {
     flexDirection: 'row',
@@ -17,11 +34,6 @@ export default StyleSheet.create({
   gameCardEdge: {
     flex: 1,
     alignItems: 'flex-end',
-    justifyContent: 'center',
-    minWidth: 50
-  },
-  gameCardPlaceData: {
-    flex: 8,
-    flexDirection: 'column'
+    justifyContent: 'center'
   }
 });

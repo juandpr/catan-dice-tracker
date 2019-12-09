@@ -5,11 +5,10 @@ import {
   DICE_UNDO,
   GAMES_SET
 } from './const';
+import initialState from './initialState';
 
 import { format } from 'date-fns';
-
-import initialState from './initialState';
-import uuid from "uuid";
+import uuid from 'uuid';
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -51,8 +50,12 @@ const reducer = (state = initialState, action) => {
       };
     
     case GAME_SELECT:
-      state.current = state.games[action.index];
-      return state;
+      return {
+        ...state,
+        current: state.games.find(game => {
+          return game.id === action.id;
+        })
+      }
     
     case DICE_UNDO:
       return {
