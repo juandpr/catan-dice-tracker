@@ -11,72 +11,93 @@ import { format } from 'date-fns';
 import uuid from 'uuid';
 
 const reducer = (state = initialState, action) => {
+  const getCurrentGame = () => state.games.find(game => {
+    return game.id === state.current;
+  });
+
   switch (action.type) {
-    case GAME_NEW:
-      if (state.current.dice.length > 0) {
-        return {
-          ...state,
-          games: [
-            ...state.games,
-            state.current
-          ],
-          current: {
-            dice: [],
-            date: getFormattedDate(),
-            id: uuid.v1()
-          }
-        }
-      } else {
-        return {
-          ...state,
-          current: {
-            dice: [],
-            date: getFormattedDate(),
-            id: uuid.v1()
-          }
-        }
-      }
+    case GAME_NEW: {
+      const newId = uuid.v1();
 
-    case DICE_THROW:
-      return {
-        ...state,
-        current: {
-          ...state.current,
-          dice: [
-            ...state.current.dice,
-            action.value
-          ]
-        }
-      };
-    
-    case GAME_SELECT:
-      return {
-        ...state,
-        current: state.games.find(game => {
-          return game.id === action.id;
-        })
-      }
-    
-    case DICE_UNDO:
-      return {
-        ...state,
-        current: {
-          ...state.current,
-          dice: [
-            ...state.current.dice.slice(0, -1)
-          ]
-        }
-      };
-
-    case GAMES_SET:
       return {
         ...state,
         games: [
           ...state.games,
-          ...action.games.games
+          {
+            dice: [],
+            date: getFormattedDate(),
+            id: newId
+          }
         ],
+        current: newId
+      }
+    }
+
+    case DICE_THROW: {
+      const currentGame = getCurrentGame();
+
+      const newGame = {
+        ...currentGame,
+        dice: [
+          ...currentGame.dice,
+          action.value
+        ]
+      };
+
+      const newGames = state.games.map(game => {
+        if (game.id === state.current) {
+          return newGame;
+        } else {
+          return game;
+        }
+      });
+
+      return {
+        ...state,
+        games: [
+          ...newGames
+        ]
+      };
+    }
+
+    case GAME_SELECT: {
+      return {
+        ...state,
+        current: action.id
+      }
+    }
+
+    case DICE_UNDO: {
+      const currentGame = getCurrentGame();
+
+      const newGame = {
+        ...currentGame,
+        dice: [
+          ...currentGame.dice.slice(0, -1),
+        ]
+      }
+
+      const newGames = state.games.map(game => {
+        if (game.id === state.current) {
+          return newGame;
+        } else {
+          return game;
+        }
+      });
+    
+  
+      return {
+        ...state,
+        games: newGames
+      };
+    }
+
+    case GAMES_SET: {
+      return {
+        games: action.games.games,
         current: action.games.current
       }
+    }
 
     default:
       return state;

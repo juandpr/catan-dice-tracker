@@ -12,7 +12,6 @@ import {
 class History extends React.Component {
   selectRow(rowId) {
     this.props.selectGame(rowId);
-
     this.props.navigation.navigate('Current');
   }
 

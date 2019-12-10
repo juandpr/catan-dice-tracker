@@ -9,8 +9,9 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 
 const mapStateToProps = state => {
 	return ({
-    dice: state.game.current.dice
+    dice: state.game.games.find(game => game.id === state.game.current).dice
   });
 };
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Game);
