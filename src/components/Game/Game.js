@@ -3,7 +3,8 @@ import { PropTypes } from 'prop-types';
 import styles from './Game.styles.js';
 
 import {
-  View
+  View,
+  Text
 } from 'react-native';
 
 import Chart from './../Chart'
@@ -19,6 +20,8 @@ class Game extends React.Component {
   render() {
     return (
       <View style={styles.game}>
+        <Text style={styles.title}>SOCDT</Text>
+        <Text style={styles.subtitle}>Settlers Of Catan Dice Tracker</Text>
         <Chart dice={this.props.dice} />
         <DiceThrower throwDice={this.props.throwDice} undoDice={this.props.undoDice}/>
       </View>

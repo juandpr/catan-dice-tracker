@@ -74,18 +74,18 @@ class Chart extends React.Component {
   }
 
   render() {
-    const fill = '#c32227';
+    const fill = '#C32227';
     let data = this.getChartData();
 
     return (
       <View style={styles.chart}>
         <BarChart
-          style={{ height: 300 }}
+          style={{ height: 250 }}
           data={data}
           svg={{ fill }}
           yAccessor={ ({ item }) => item.amount }
           xAccessor={ ({ item }) => item.diceValue }
-          contentInset={{ top: 50, bottom: 10 }}
+          contentInset={{ top: 0, bottom: 10 }}
         >
           <Grid />
         </BarChart>

@@ -11,21 +11,21 @@ export default StyleSheet.create({
     flexDirection: 'row'
   },
   firstColumn: {
-    borderColor: '#CCC',
+    borderColor: '#FEC807',
     borderStyle: 'solid',
-    borderTopWidth: 4,
+    borderTopWidth: 4
   },
   buttonContainer: {
     flex: 1,
     alignSelf: 'stretch',
     alignItems: 'center',
     justifyContent: 'center',
-    borderColor: '#CCC',
+    borderColor: '#FEC807',
     borderStyle: 'solid',
     borderBottomWidth: 4,
-    borderRightWidth: 4,
+    borderRightWidth: 4
   },
   buttonContainerLastRow: {
-    borderRightWidth: 0,
+    borderRightWidth: 0
   }
 });

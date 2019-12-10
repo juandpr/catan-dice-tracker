@@ -9,7 +9,8 @@ export default StyleSheet.create({
   historyTitle: {
     marginTop: 30,
     textAlign: 'center',
-    fontSize: 24
+    fontSize: 24,
+    fontFamily: 'IowanOldStyle-Bold'
   },
   listTitle: {
     flexDirection: 'row',

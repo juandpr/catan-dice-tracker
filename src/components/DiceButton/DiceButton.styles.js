@@ -5,10 +5,12 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     height: '100%',
-    width: '100%'
+    width: '100%',
+    backgroundColor: '#FFF58C'
   },
   diceButtonText: {
     fontSize: 20,
-    color: '#0066CC',  
+    color: '#C02129',
+    fontFamily: 'IowanOldStyle-Bold'
   }
 });
