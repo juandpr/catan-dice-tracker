@@ -12,17 +12,19 @@ import DiceThrower from './../DiceThrower'
 
 class Game extends React.Component {
   componentDidMount() {
-    if (this.props.dice.length === 0) {
-      this.props.navigation.navigate('NewGame');
+    if (!this.props.currentGame) {
+      this.props.navigation.navigate('New');
     }
   }
 
   render() {
+    const dice = this.props.currentGame && this.props.currentGame.dice || [];
+
     return (
       <View style={styles.game}>
         <Text style={styles.title}>SOCDT</Text>
         <Text style={styles.subtitle}>Settlers Of Catan Dice Tracker</Text>
-        <Chart dice={this.props.dice} />
+        <Chart dice={dice} />
         <DiceThrower throwDice={this.props.throwDice} undoDice={this.props.undoDice}/>
       </View>
     );
@@ -30,7 +32,7 @@ class Game extends React.Component {
 }
 
 Game.propTypes = {
-  dice: PropTypes.array.isRequired,
+  currentGame: PropTypes.object.isRequired,
   throwDice: PropTypes.func.isRequired,
   undoDice: PropTypes.func.isRequired
 };

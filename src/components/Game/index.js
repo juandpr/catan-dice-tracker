@@ -9,7 +9,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 
 const mapStateToProps = state => {
 	return ({
-    dice: state.game.games.find(game => game.id === state.game.current).dice
+    currentGame: state.game.games.find(game => game.id === state.game.current)
   });
 };
 
