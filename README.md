@@ -18,5 +18,23 @@ react-native run-ios
 react-native run-android
 ```
 
+## Build for Android
+You should edit the file `gradle.properties` and add the following fields
+```
+MYAPP_UPLOAD_STORE_FILE=XXXX
+MYAPP_UPLOAD_KEY_ALIAS=XXXX
+MYAPP_UPLOAD_STORE_PASSWORD=XXXX
+MYAPP_UPLOAD_KEY_PASSWORD=XXXX
+```
+
+Once done that, run the following commands:
+
+```
+cd android
+./gradlew assembleReleas
+```
+
+For more information about how to build for Android, check this link <a href="https://facebook.github.io/react-native/docs/signed-apk-android">Publishing to Google Play Store</a>
+
 ### More information
 This app has been created with the purpose of learning how to use React Native, PRs are welcome.
